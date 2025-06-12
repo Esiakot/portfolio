@@ -3,109 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - BTS SIO</title>
+    <title>Portfolio - Tony Paris - BTS SIO</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="dark-mode">
-    <!-- Logo avec fonction de changement de mode -->
-
-    <!-- Fil d'Ariane dynamique -->
-    <div class="breadcrumb-bar">
-      <div id="breadcrumbProgress"></div>
-    </div>
-
-    <!-- En-tête -->
     <header>
-      <nav>
-        <ul class="menu">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="container nav-container">
+        <h1 class="logo-title">Tony Paris</h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#e5">Projet E5</a></li>
+            <li><a href="#projects">Autres projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Contenu principal -->
     <main>
-      <div class="logo-container">
-        <img src="img/logo.png" alt="Logo" class="logo" id="toggleMode" />
-      </div>
-
-      <section id="about" class="section">
-        <div class="container">
-          <h1>Bienvenue sur mon portfolio</h1>
-          <div class="about-content">
-            <div class="about-photo">
-              <img src="img/photo.jpg" alt="Ma photo" class="photo" />
-            </div>
-            <div class="about-text">
-              <p>
-                Étudiant en <strong>BTS SIO</strong>, je suis passionné depuis
-                toujours par l'informatique dans divers domaines, je suis ouvert
-                à toute sorte de proposition d'emploi en
-                <strong>alternance</strong>.
-              </p>
-            </div>
+      <section id="about" class="section fade-in">
+        <div class="container about">
+          <img src="img/photo.jpg" alt="Ma photo" class="photo" />
+          <div>
+            <h2>À propos de moi</h2>
+            <p>
+              Étudiant en <strong>BTS SIO option SLAM</strong>, je suis
+              passionné par le développement web et les systèmes informatiques.
+              Je suis actuellement en alternance chez
+              <strong>Symétrie (Nîmes)</strong> où je développe des outils
+              internes en PHP, SQL et JavaScript.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="e5" class="section fade-in">
         <div class="container">
-          <h2>Mes Projets</h2>
-          <div class="projects-grid">
-            <div class="project-card">
-              <img
-                src="img/capture_formulaire.PNG"
-                alt="Projet 1"
-                class="project-image"
-              />
-              <h3>Formulaire d'inscription</h3>
-              <p>
-                Formulaire web d'inscription relier à une base de donnée en SQL
-                grâce à une solution PHP, ce formulaire permet également de
-                sécuriser le stockage des mots de passe avec l'aide de BCRYPT.
-                Formulaire effectuer dans le cadre d'un cours de programmation,
-                avec les ajouts cité ci-dessus en dehors du cours.
-              </p>
-            </div>
-            <div class="project-card">
-              <img
-                src="img/capture_cisco.PNG"
-                alt="Projet 2"
-                class="project-image"
-              />
-              <h3>Simulation CISCO PACKET TRACER</h3>
-              <p>
-                Simulation CISCO PACKET TRACER dans le cadre d'un devoir
-                surveillé, cette simulation contient 4 services différents ainsi
-                qu'un datacenter secondaire, et une succursale Suisse
-                additionnelle.
-              </p>
-            </div>
-          </div>
+          <h2>🛠️ Mon projet professionnel (E5)</h2>
+          <p>
+            Dans le cadre de mon alternance chez <strong>Symétrie</strong>, j’ai
+            conçu une application web de gestion interne. Ce projet est présenté
+            à l’épreuve E5 du BTS SIO option SLAM.
+          </p>
+          <a href="projet-e5.html" class="btn">🔎 Voir le projet en détail</a>
         </div>
       </section>
 
-      <section id="contact" class="section">
+      <section id="contact" class="section fade-in">
         <div class="container">
-          <h2>Contactez-moi</h2>
-          <p>Pour plus d'informations :</p>
-          <ul>
+          <h2>📬 Me contacter</h2>
+          <ul class="contact-list">
             <li>
               Email :
               <a href="mailto:tony.parispro@gmail.com"
                 >tony.parispro@gmail.com</a
               >
             </li>
-            <li>LinkedIn : <a href="#">Mon profil LinkedIn</a></li>
+            <li>LinkedIn : <a href="#">Voir mon profil</a></li>
           </ul>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>Portfolio BTS SIO - Tony Paris.</p>
+      <p>© 2025 - Portfolio de Tony Paris - BTS SIO SLAM</p>
     </footer>
 
     <script src="script.js"></script>

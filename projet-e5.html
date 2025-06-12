@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Projet E5 – Gestion interne – Tony Paris</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark-mode">
+    <header>
+      <div class="container nav-container">
+        <h1 class="logo-title">Projet E5 – Symétrie Gestion Interne</h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">🏠 Accueil</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section fade-in">
+        <div class="container">
+          <h2>📌 Contexte & Enjeux</h2>
+          <p>
+            Alternant chez <strong>Symétrie</strong> (Nîmes), PME spécialisée en
+            métrologie, j’ai conçu cet outil pour pallier les limites des
+            fichiers Excel et centraliser la gestion des ressources
+            informatiques et du support.
+          </p>
+
+          <h2>🎯 Objectifs du projet</h2>
+          <ul class="features-list">
+            <li>
+              Remplacer les tableaux Excel par une base de données centralisée.
+            </li>
+            <li>Simplifier l’affectation du matériel aux utilisateurs.</li>
+            <li>Améliorer la traçabilité des interventions via tickets.</li>
+            <li>Garantir la sécurité des accès (roles + BCRYPT).</li>
+          </ul>
+
+          <h2>🧠 Approche et méthode</h2>
+          <ol class="features-list">
+            <li>Recueil des besoins avec mon tuteur en entreprise.</li>
+            <li>Modélisation UML de la base de données.</li>
+            <li>Développement itératif avec tests à chaque phase.</li>
+            <li>Déploiement en docker sur serveur Ubuntu.</li>
+          </ol>
+
+          <img
+            class="screenshot"
+            src="img/uml_shema.png"
+            alt="Modèle UML BD"
+            class="screenshot"
+          />
+          <img
+            class="screenshot"
+            src="img/schema.png"
+            alt="data"
+            class="screenshot"
+          />
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>🧱 Technologies & architecture</h2>
+          <table class="tech-table">
+            <tr>
+              <th>Composants</th>
+              <th>Détails</th>
+            </tr>
+            <tr>
+              <td>Langage</td>
+              <td>PHP 8 + MariaDB, JS, HTML5, CSS3</td>
+            </tr>
+            <tr>
+              <td>DB</td>
+              <td>
+                MariaDB avec 5 tables principales (utilisateurs, ordinateurs,
+                telephone, tickets...)
+              </td>
+            </tr>
+            <tr>
+              <td>Conteneurisation</td>
+              <td>Docker Compose (Apache, PHP-FPM, MariaDB)</td>
+            </tr>
+            <tr>
+              <td>Versioning</td>
+              <td>GitLab via SourceTree</td>
+            </tr>
+            <tr>
+              <td>Dev</td>
+              <td>VSCode sous WAMP</td>
+            </tr>
+            <tr>
+              <td>Déploiement</td>
+              <td>Sur Ubuntu 20.04, IP interne, sauvegarde cron + dump SQL</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>📦 Progiciel et structure</h2>
+          <p>Voici l’arborescence principale :</p>
+          <img
+            class="screenshot"
+            src="img/arborescence.png"
+            alt="Arborescence"
+            class="screenshot"
+          />
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>🧩 Fonctionnalités clés</h2>
+
+          <h3>1. Gestion utilisateurs & AD</h3>
+          <ul class="features-list">
+            <li>
+              Import manuel des utilisateurs AD, affectation aux groupes
+              métiers.
+            </li>
+            <li>
+              Ajout, modification, bannissement via formulaires sécurisés.
+            </li>
+            <li>Filtres rapides (par nom, groupe, statut…).</li>
+          </ul>
+          <img
+            src="img/usagers_table.png"
+            alt="Interface utilisateurs"
+            class="screenshot"
+          />
+
+          <h3>2. Gestion équipements</h3>
+          <ul class="features-list">
+            <li>
+              Ajout/modification des équipements avec champs dynamiques (OS).
+            </li>
+            <li>Affectation et historique d’usage.</li>
+            <li>Recherche / filtre par type, utilisateur.</li>
+          </ul>
+          <img
+            src="img/items_table.png"
+            alt="Interface équipements"
+            class="screenshot"
+          />
+
+          <h3>3. Système de tickets interne</h3>
+          <ul class="features-list">
+            <li>Formulaire d'incident sécurisé avec PJ (JPG/PNG).</li>
+            <li>Suivi du ticket (ouvert, en cours, clos) avec historique.</li>
+            <li>Export PDF du ticket.</li>
+          </ul>
+          <img
+            src="img/ticket_detail.png"
+            alt="Detail ticket"
+            class="screenshot"
+          />
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>🔒 Sécurité & bonnes pratiques</h2>
+          <ul class="features-list">
+            <li>BCRYPT pour les mots de passe + salage automatique.</li>
+            <li>Protection CSRF (token dans les formulaires).</li>
+            <li>Sessions sécurisées avec vérification de timeout.</li>
+            <li>Requêtes préparées contre les injections SQL.</li>
+            <li>
+              Audit simple : logs d’actions (connexion, création ticket...).
+            </li>
+          </ul>
+          <img
+            src="img/security_diagram.png"
+            alt="Diagramme sécurité"
+            class="screenshot"
+          />
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>📉 Limites & axes d’amélioration</h2>
+          <ul class="features-list">
+            <li>Pas d’automatisation AD (possible via LDAP script).</li>
+            <li>Pas de notification par mail ou push.</li>
+            <li>
+              Performance perfectible, utilisation de DataTables envisagée.
+            </li>
+            <li>Responsive à optimiser (mobile/tablette).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>🚀 Evolutions futures proposées</h2>
+          <ul class="features-list">
+            <li>Connexion LDAP pour synchronisation des utilisateurs.</li>
+            <li>Dashboard avec graphiques (Chart.js).</li>
+            <li>API REST pour apps mobiles ou connecteurs externes.</li>
+            <li>Migrer vers Laravel ou Symfony.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-in">
+        <div class="container">
+          <h2>🎓 Compétences mises en œuvre</h2>
+          <ul class="features-list">
+            <li>Analyse du besoin → solution technique.</li>
+            <li>Conception BD via UML et SQL.</li>
+            <li>Développement MVC en PHP 8.</li>
+            <li>Sécurisation, tests, versioning, déploiement.</li>
+            <li>Organisation en équipe et gestion de projet agile.</li>
+          </ul>
+
+          <a href="fiches/BTS_E5_TonyParis.pdf" class="btn" target="_blank">
+            📄 Télécharger la fiche E5 (PDF)
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 – Tony Paris – Projet E5 – BTS SIO</p>
+    </footer>
+  </body>
+</html>
