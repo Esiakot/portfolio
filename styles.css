@@ -63,7 +63,7 @@ header {
 
 /* SECTIONS */
 .section {
-  padding: 60px 20px;
+  padding: 20px 20px;
 }
 
 .container {
@@ -91,7 +91,6 @@ ul.features-list {
 .about {
   display: flex;
   align-items: center;
-  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -107,8 +106,6 @@ ul.features-list {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
 }
 
 .project-card {
@@ -149,7 +146,8 @@ ul.features-list {
   color: #121212;
   border-radius: 5px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
   transition: background 0.3s;
 }
 
