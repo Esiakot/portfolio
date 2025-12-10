@@ -139,20 +139,20 @@ export async function GET() {
     // Calculer le rang dans le classement général
     let topScorerRank = null;
     if (topScorer) {
-      const rankIndex = allLeagueScorers.findIndex(
-        (s: any) => s.total < topScorer.goals
+      // Compter combien de joueurs ont STRICTEMENT PLUS de buts
+      const betterScorers = allLeagueScorers.filter(
+        (s: any) => s.total > topScorer.goals
       );
-      topScorerRank =
-        rankIndex >= 0 ? rankIndex + 1 : allLeagueScorers.length + 1;
+      topScorerRank = betterScorers.length + 1;
     }
 
     let topAssisterRank = null;
     if (topAssister) {
-      const rankIndex = allLeagueAssisters.findIndex(
-        (a: any) => a.total < topAssister.assists
+      // Compter combien de joueurs ont STRICTEMENT PLUS de passes
+      const betterAssisters = allLeagueAssisters.filter(
+        (a: any) => a.total > topAssister.assists
       );
-      topAssisterRank =
-        rankIndex >= 0 ? rankIndex + 1 : allLeagueAssisters.length + 1;
+      topAssisterRank = betterAssisters.length + 1;
     }
 
     console.log(`Top scorer rank in Ligue 1: ${topScorerRank}`);
