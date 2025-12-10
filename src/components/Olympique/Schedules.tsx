@@ -120,7 +120,7 @@ export default function Schedules() {
       (a, b) =>
         new Date(a.starting_at).getTime() - new Date(b.starting_at).getTime()
     )
-    .slice(0, 5);
+    .slice(0, 7);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

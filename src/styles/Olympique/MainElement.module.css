@@ -36,7 +36,7 @@
   position: absolute;
   top: 12vh;
   right: 0;
-  width: 90%;
+  width: 70%;
   height: 76vh;
   z-index: 3;
   pointer-events: none;
@@ -48,10 +48,10 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px) brightness(1.5);
   -webkit-mask-image: linear-gradient(to right, #00000000 0%, #000000 100%);
   mask-image: linear-gradient(to right, #00000000 0%, #000000 100%);
-  background: linear-gradient(to right, #00304900 0%, #003049f1 100%);
+  background: linear-gradient(to right, #00304900 0%, #002f4971 100%);
 }
 
 .carousel {
