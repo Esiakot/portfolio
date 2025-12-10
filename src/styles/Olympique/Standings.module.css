@@ -64,6 +64,7 @@
 
 .tableRow:hover {
   background: #ffffff20;
+  border-color: #00d4ff;
 }
 
 .tableRow:last-child {
