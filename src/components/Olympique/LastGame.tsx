@@ -185,7 +185,9 @@ const LastGame: React.FC = () => {
         return (
           <div key={match.id} className={styles.matchWrapper}>
             <div
-              className={`${styles.matchInfo} ${isExpanded ? styles.matchInfoActive : ''}`}
+              className={`${styles.matchInfo} ${
+                isExpanded ? styles.matchInfoActive : ""
+              }`}
               onClick={() => {
                 if (clickTimeout && lastClickedIndex === index) {
                   clearTimeout(clickTimeout);

@@ -8,9 +8,34 @@ export async function GET() {
       throw new Error("API token not configured");
     }
 
-    const includes = ["details.type", "participant"].join(";");
+    // Récupérer le dernier match de Marseille via l'endpoint team avec latest
+    const teamUrl = `https://api.sportmonks.com/v3/football/teams/44?include=latest&api_token=${apiToken}`;
+    
+    const teamResponse = await fetch(teamUrl, {
+      headers: {
+        Accept: "application/json",
+      },
+      cache: 'no-store',
+    });
 
-    const url = `https://api.sportmonks.com/v3/football/standings/rounds/372940?include=${includes}&api_token=${apiToken}`;
+    if (!teamResponse.ok) {
+      throw new Error(`Error fetching team: ${teamResponse.status}`);
+    }
+
+    const teamData = await teamResponse.json();
+    
+    console.log("Team latest match:", teamData.data?.latest);
+    
+    if (!teamData.data?.latest || !Array.isArray(teamData.data.latest) || teamData.data.latest.length === 0) {
+      throw new Error("No latest match found");
+    }
+
+    const latestRoundId = teamData.data.latest[0].round_id;
+    
+    console.log("Latest completed round ID:", latestRoundId);
+
+    const includes = ["details.type", "participant"].join(";");
+    const url = `https://api.sportmonks.com/v3/football/standings/rounds/${latestRoundId}?include=${includes}&api_token=${apiToken}`;
 
     console.log("Fetching standings:", url);
 
@@ -18,6 +43,7 @@ export async function GET() {
       headers: {
         Accept: "application/json",
       },
+      cache: 'no-store',
     });
 
     console.log("Response status:", response.status);
