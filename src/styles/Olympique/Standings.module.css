@@ -34,7 +34,6 @@
   background: #ffffff20;
   backdrop-filter: blur(10px);
   border: 1px solid #003049;
-  border-radius: 0.5rem 0.5rem 0 0;
   font-size: 0.75rem;
   font-weight: 700;
   color: #00d4ff;
@@ -65,10 +64,6 @@
 .tableRow:hover {
   background: #ffffff20;
   border-color: #00d4ff;
-}
-
-.tableRow:last-child {
-  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .highlighted {

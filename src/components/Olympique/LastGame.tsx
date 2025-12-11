@@ -64,18 +64,18 @@ const LastGame: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [expandedMatch, setExpandedMatch] = useState<number | null>(0);
-  const [lastClickedMatch, setLastClickedMatch] = useState<number | null>(null);
+  const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [lastClickedIndex, setLastClickedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchLastGame = async () => {
       try {
-        const response = await fetch("/api/lastgame");
+        const response = await fetch("/api/olympique/lastgame");
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");
         }
         const data: LastGameData = await response.json();
 
-        // Récupérer les 5 derniers matchs
         if (
           data.data &&
           Array.isArray(data.data.latest) &&
@@ -187,20 +187,26 @@ const LastGame: React.FC = () => {
             <div
               className={styles.matchInfo}
               onClick={() => {
-                // Si le match cliqué est déjà ouvert et c'était le dernier clic
-                if (isExpanded && lastClickedMatch === index) {
-                  // Rediriger vers la page du match
-                  window.open(`/match/${match.id}`, "_blank");
-                } else if (isExpanded) {
-                  // Si ouvert mais pas le dernier clic, ouvrir le suivant
-                  const nextIndex =
-                    index === lastGames.length - 1 ? 0 : index + 1;
-                  setExpandedMatch(nextIndex);
-                  setLastClickedMatch(nextIndex);
+                if (clickTimeout && lastClickedIndex === index) {
+                  clearTimeout(clickTimeout);
+                  setClickTimeout(null);
+                  setLastClickedIndex(null);
+                  window.open(`/olympique/match/${match.id}`, "_blank");
                 } else {
-                  // Ouvrir ce match
-                  setExpandedMatch(index);
-                  setLastClickedMatch(index);
+                  if (clickTimeout) {
+                    clearTimeout(clickTimeout);
+                  }
+                  const timeout = setTimeout(() => {
+                    if (expandedMatch === index) {
+                      window.location.href = `/olympique/match/${match.id}`;
+                    } else {
+                      setExpandedMatch(index);
+                    }
+                    setClickTimeout(null);
+                    setLastClickedIndex(null);
+                  }, 250);
+                  setClickTimeout(timeout);
+                  setLastClickedIndex(index);
                 }
               }}
             >

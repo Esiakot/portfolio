@@ -12,7 +12,6 @@
   backdrop-filter: blur(10px);
   background-color: #ffffff20;
   border: 1px solid #003049;
-  border-radius: 8px;
   padding: 1rem;
   transition: all 0.2s ease;
 }

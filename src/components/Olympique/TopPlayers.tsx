@@ -28,7 +28,7 @@ const TopPlayers: React.FC = () => {
     const fetchTopPlayers = async () => {
       try {
         console.log("TopPlayers: Fetching data...");
-        const response = await fetch("/api/top-players");
+        const response = await fetch("/api/olympique/top-players");
         console.log("TopPlayers: Response status:", response.status);
 
         if (!response.ok) {
@@ -78,7 +78,6 @@ const TopPlayers: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.playersGrid}>
-        {/* Meilleur Buteur */}
         {data.topScorer && (
           <div className={styles.playerCard}>
             <div className={styles.cardHeader}>
@@ -116,7 +115,6 @@ const TopPlayers: React.FC = () => {
           </div>
         )}
 
-        {/* Meilleur Passeur */}
         {data.topAssister && (
           <div className={styles.playerCard}>
             <div className={styles.cardHeader}>

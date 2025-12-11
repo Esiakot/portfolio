@@ -67,7 +67,7 @@ export default function Schedules() {
   useEffect(() => {
     const fetchSchedule = async () => {
       try {
-        const response = await fetch("/api/schedule");
+        const response = await fetch("/api/olympique/schedule");
 
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");

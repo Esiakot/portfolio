@@ -52,14 +52,13 @@ const Standings: React.FC = () => {
   useEffect(() => {
     const fetchStandings = async () => {
       try {
-        const response = await fetch("/api/standings");
+        const response = await fetch("/api/olympique/standings");
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");
         }
         const data: StandingsData = await response.json();
 
         if (data.data && Array.isArray(data.data)) {
-          // Trier par position
           const sortedStandings = data.data.sort(
             (a, b) => a.position - b.position
           );
@@ -127,7 +126,6 @@ const Standings: React.FC = () => {
           {standings.map((standing) => {
             const isMarseille = standing.participant_id === 44;
 
-            // Les détails utilisent des codes différents pour le classement
             const played = getDetailValue(
               standing.details,
               "overall-matches-played"
