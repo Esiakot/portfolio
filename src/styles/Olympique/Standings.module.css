@@ -58,7 +58,6 @@
   font-size: 0.8rem;
   color: #ffffff;
   align-items: center;
-  transition: all 0.2s ease;
 }
 
 .tableRow:hover {

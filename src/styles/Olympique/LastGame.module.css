@@ -34,7 +34,6 @@
   background-color: #ffffff20;
   margin: 0.2rem 0;
   border: 1px solid #003049;
-  transition: all 0.3s ease;
   height: 5vh;
   cursor: pointer;
   padding: 0.5rem;
@@ -43,6 +42,10 @@
 .matchInfo:hover {
   border-color: #00d4ff;
   background-color: #ffffff30;
+}
+
+.matchInfoActive {
+  border-color: #00d4ff;
 }
 
 .date {
@@ -88,7 +91,7 @@
   border: 1px solid #003049;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
-  animation: slideDown 0.3s ease;
+  border-color: #00d4ff;
 }
 
 @keyframes slideDown {

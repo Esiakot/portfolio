@@ -12,7 +12,6 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 .backButton:hover {
@@ -241,12 +240,10 @@
 
 .statBarHome {
   background: linear-gradient(90deg, #00b4d8, #0077b6);
-  transition: width 0.5s ease;
 }
 
 .statBarAway {
   background: linear-gradient(90deg, #e76f51, #d62828);
-  transition: width 0.5s ease;
 }
 
 /* Événements */
@@ -272,7 +269,6 @@
   background: rgba(0, 21, 36, 0.4);
   border-radius: 8px;
   border-left: 4px solid transparent;
-  transition: all 0.3s ease;
 }
 
 .eventItem:hover {
