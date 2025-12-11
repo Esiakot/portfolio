@@ -1,9 +1,8 @@
 .container {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   overflow: hidden;
 }
 
@@ -21,4 +20,12 @@
   height: 100%;
   background-color: #ffffff20;
   backdrop-filter: blur(8px);
+}
+.rightContainer {
+  position: relative;
+  z-index: 20;
+  width: 30vw;
+  height: auto;
+  padding: 1rem;
+  background: #00304990;
 }

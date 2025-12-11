@@ -1,0 +1,139 @@
+.container {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 88vh;
+  padding: 1rem;
+  background: #00304990;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.error {
+  color: #ff4757;
+}
+
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.7fr 0.7fr;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background: #ffffff20;
+  backdrop-filter: blur(10px);
+  border: 1px solid #003049;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00d4ff;
+  text-align: center;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.7fr 0.7fr;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background: #ffffff10;
+  backdrop-filter: blur(10px);
+  border-left: 1px solid #003049;
+  border-right: 1px solid #003049;
+  border-bottom: 1px solid #003049;
+  font-size: 0.8rem;
+  color: #ffffff;
+  align-items: center;
+}
+
+.tableRow:hover {
+  background: #ffffff20;
+  border-color: #00d4ff;
+}
+
+.highlighted {
+  background: #00d4ff20 !important;
+  border-left: 3px solid #00d4ff !important;
+  font-weight: 600;
+}
+
+.posCol,
+.statCol,
+.ptsCol {
+  text-align: center;
+}
+
+.teamCol {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teamLogo {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.position {
+  font-weight: 700;
+  color: #00d4ff;
+}
+
+.points {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #00d4ff;
+}
+
+.positive {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.negative {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+  }
+
+  .tableHeader,
+  .tableRow {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .teamName {
+    font-size: 0.65rem;
+  }
+
+  .teamLogo {
+    width: 16px;
+    height: 16px;
+  }
+}

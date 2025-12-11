@@ -1,0 +1,91 @@
+.container {
+  margin-top: 2rem;
+}
+
+.playersGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.playerCard {
+  backdrop-filter: blur(10px);
+  background-color: #ffffff20;
+  border: 1px solid #003049;
+  padding: 1rem;
+}
+
+.playerCard:hover {
+  border-color: #00d4ff;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.playerImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #003049;
+}
+
+.playerInfo {
+  flex: 1;
+}
+
+.playerName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.playerPosition {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #003049;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #bbbbbb;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.loading,
+.error,
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.error {
+  color: #ff6b6b;
+}

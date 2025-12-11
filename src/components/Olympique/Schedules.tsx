@@ -67,7 +67,7 @@ export default function Schedules() {
   useEffect(() => {
     const fetchSchedule = async () => {
       try {
-        const response = await fetch("/api/schedule");
+        const response = await fetch("/api/olympique/schedule");
 
         if (!response.ok) {
           throw new Error("Erreur lors de la récupération des données");
@@ -120,7 +120,7 @@ export default function Schedules() {
       (a, b) =>
         new Date(a.starting_at).getTime() - new Date(b.starting_at).getTime()
     )
-    .slice(0, 5);
+    .slice(0, 7);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
