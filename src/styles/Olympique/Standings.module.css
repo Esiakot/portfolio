@@ -45,18 +45,20 @@
 .tableBody {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 }
 
 .tableRow {
   display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.7fr 0.7fr;
   gap: 0.5rem;
-  padding: 0.6rem 0.5rem;
+  padding: 0.42rem 0.5rem;
   background: #ffffff10;
   backdrop-filter: blur(10px);
   border-left: 1px solid #003049;
   border-right: 1px solid #003049;
   border-bottom: 1px solid #003049;
+  border-top: 1px solid #003049;
   font-size: 0.8rem;
   color: #ffffff;
   align-items: center;

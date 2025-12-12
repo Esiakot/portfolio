@@ -18,8 +18,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff20;
-  backdrop-filter: blur(8px);
+}
+.leftContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 20;
+  width: 30vw;
+  height: 88vh;
+  padding: 1rem;
+  background: #00304990;
 }
 .rightContainer {
   position: relative;

@@ -10,7 +10,6 @@ export async function GET(
     const { id: matchId } = await params;
     console.log(`Fetching match details for ID: ${matchId}`);
 
-    // Récupérer les détails complets du match avec toutes les statistiques et événements
     const matchUrl = `https://api.sportmonks.com/v3/football/fixtures/${matchId}?include=participants;scores;statistics.type;events.type;league;round;venue&api_token=${API_TOKEN}`;
 
     const response = await fetch(matchUrl, {
