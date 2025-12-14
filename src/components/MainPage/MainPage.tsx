@@ -13,46 +13,51 @@ const amarante = Amarante({
 export default function MainPage() {
   return (
     <div className={`${styles.mainPage} ${amarante.className}`}>
-      <div className={styles.menu}>
-        <div className={styles.logoWrapper}>
+      <div className={styles.overlayContainer}></div>
+      <div className={styles.sectionContainer}>
+        <div className={styles.leftSection}>
+          <div className={styles.topImage}>
+            <Image
+              src="/MainPage/basquiat.jpg"
+              alt="Top Image"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.middleImage}>
+            <Image
+              src="/MainPage/roley.webp"
+              alt="Middle Image"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className={styles.bottomImage}>
+            <Image
+              src="/MainPage/berlin.jpg"
+              alt="Bottom Image"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+        <div className={styles.centerSection}>
           <Image
-            className={styles.logo}
-            src="/logo.jpeg"
-            alt="Logo"
-            width={200}
-            height={200}
+            src="/MainPage/entreprise.jpg"
+            alt="Center Logo"
+            fill
+            style={{ objectFit: "cover" }}
           />
         </div>
-        <div className={styles.menuItems}>
-          <div className={styles.duoContainer1}>
-            <div
-              className={`${styles.bottom} ${styles.bottom1} ${styles.duo1}`}
-            ></div>
-            <div className={`${styles.top} ${styles.duo1}`}></div>
-            <div className={styles.menuText}>accueil</div>
-          </div>
-
-          <div className={styles.duoContainer2}>
-            <div className={`${styles.bottom} ${styles.duo2}`}></div>
-            <div className={`${styles.top} ${styles.duo2}`}></div>
-            <div className={styles.menuText}>à propos</div>
-          </div>
-
-          <div className={styles.duoContainer3}>
-            <div className={`${styles.bottom} ${styles.duo3}`}></div>
-            <div className={`${styles.top} ${styles.duo3}`}></div>
-            <div className={styles.menuText}>portfolio</div>
-          </div>
-
-          <div className={styles.duoContainer4}>
-            <div className={`${styles.bottom} ${styles.duo4}`}></div>
-            <div className={`${styles.top} ${styles.duo4}`}></div>
-            <div className={styles.menuText}>contact</div>
-          </div>
+        <div className={styles.rightSection}>
+          <Image
+            src="/MainPage/world.jpg"
+            alt="Right Image"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
       </div>
-
-      <div className={styles.content}></div>
     </div>
   );
 }

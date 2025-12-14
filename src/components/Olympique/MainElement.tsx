@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "@/styles/Olympique/MainElement.module.css";
-import Header from "@/components/Olympique/Common/Header";
 import { Genos } from "next/font/google";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -12,24 +11,24 @@ const genos = Genos({
 });
 
 const images = [
-  "/green.webp",
-  "/robi.webp",
-  "/auba.webp",
-  "/roley.webp",
-  "/team.webp",
+  "/Olympique/green.webp",
+  "/Olympique/robi.webp",
+  "/Olympique/auba.webp",
+  "/Olympique/roley.webp",
+  "/Olympique/team.webp",
 ];
 
 const getImageClass = (index: number) => {
   switch (images[index]) {
-    case "/green.webp":
+    case "/Olympique/green.webp":
       return styles.imageGreen;
-    case "/robi.webp":
+    case "/Olympique/robi.webp":
       return styles.imageFlag;
-    case "/auba.webp":
+    case "/Olympique/auba.webp":
       return styles.imageAuba;
-    case "/team.webp":
+    case "/Olympique/team.webp":
       return styles.imageTeam;
-    case "/roley.webp":
+    case "/Olympique/roley.webp":
       return styles.imageRoley;
   }
 };
@@ -81,8 +80,6 @@ export default function MainElement() {
 
   return (
     <div className={`${styles.container} ${genos.className}`}>
-      <Header />
-
       <div className={styles.carousel}>
         {isTransitioning && (
           <Image
