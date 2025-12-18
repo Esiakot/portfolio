@@ -10,18 +10,18 @@
 .headerTop {
   width: 100%;
   height: 4vh;
-  background-color: #420017;
+  background-color: #004aad;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff90;
+  background-color: #e6f1ff90;
   backdrop-filter: blur(8px);
   height: 8vh;
   width: 100%;
-  border-bottom: 2px solid #420017;
+  border-bottom: 2px solid #004aad;
 }
 
 .logoOM {
