@@ -85,7 +85,7 @@ export default function MainPage() {
               <div className={styles.competencesLogos}>
                 <div className={styles.logoItem}>
                   <Image
-                    src="/MainPage/logo/HTML-5-Badge-Logo.png"
+                    src="/MainPage/logo/HTMLLogo.png"
                     alt="HTML5"
                     width={50}
                     height={50}
@@ -145,7 +145,7 @@ export default function MainPage() {
                 </div>
                 <div className={styles.logoItem}>
                   <Image
-                    src="/MainPage/logo/nextjs-icon-dark-background.png"
+                    src="/MainPage/logo/next-js.svg"
                     alt="Next.js"
                     width={50}
                     height={50}
@@ -158,14 +158,14 @@ export default function MainPage() {
                 </div>
                 <div className={styles.logoItem}>
                   <Image
-                    src="/MainPage/logo/MySQL.svg"
-                    alt="MySQL"
+                    src="/MainPage/logo/Mariadb.png"
+                    alt="MariaDB"
                     width={50}
                     height={50}
                     className={styles.logoItemImage}
                   />
                   <div className={styles.logoItemText}>
-                    <h2 className={styles.logoItemTitle}>MySQL</h2>
+                    <h2 className={styles.logoItemTitle}>MariaDB</h2>
                     <h2 className={styles.logoItemDescription}>
                       Base de données
                     </h2>
