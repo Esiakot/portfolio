@@ -72,18 +72,16 @@ export default function MainPage() {
         <div className={styles.aproposContent}>
           <div className={styles.aproposHeadContent}>
             <h2 className={styles.aproposTitle}>À propos de moi :</h2>{" "}
-            <div className={styles.aproposDescription}>
+            <p className={styles.aproposDescription}>
               Hey, moi c'est Tony, je suis passionné par l'informatique. Mon
               cursus est un BTS SIO option SLAM, que j'effectue à l'ICFA de
-              Montpellier en alternance chez Symetrie dans son service SI.
-            </div>
+              Montpellier en alternance chez SYMETRIE dans son SI notamment à
+              travers des projets tel que des ETLs ou un site-web interne.
+            </p>
           </div>
           <div className={styles.aproposDetails}>
             <div className={styles.separatorLine}></div>
             <div className={styles.aproposCompetences}>
-              <h2 className={styles.aproposCompetencesTitle}>
-                Compétences clées:
-              </h2>
               <div className={styles.competencesLogos}>
                 <div className={styles.logoItem}>
                   <Image
@@ -91,11 +89,14 @@ export default function MainPage() {
                     alt="HTML5"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>HTML</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Mise en forme
+                    </h2>
+                  </div>
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -103,11 +104,14 @@ export default function MainPage() {
                     alt="CSS"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>CSS</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Feuille de style
+                    </h2>
+                  </div>
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -115,11 +119,14 @@ export default function MainPage() {
                     alt="JavaScript"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Javascript</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Langage de programation
+                    </h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -127,11 +134,14 @@ export default function MainPage() {
                     alt="TypeScript"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>TypeScript</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Langage de programation
+                    </h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -139,35 +149,12 @@ export default function MainPage() {
                     alt="Next.js"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
-                </div>
-                <div className={styles.logoItem}>
-                  <Image
-                    src="/MainPage/logo/PHP-logo.svg"
-                    alt="PHP"
-                    width={50}
-                    height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
-                  />
-                </div>
-                <div className={styles.logoItem}>
-                  <Image
-                    src="/MainPage/logo/Python-logo-notext.svg.png"
-                    alt="Python"
-                    width={50}
-                    height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
-                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Next.js</h2>
+                    <h2 className={styles.logoItemDescription}>Framework</h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -175,62 +162,60 @@ export default function MainPage() {
                     alt="MySQL"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>MySQL</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Base de données
+                    </h2>
+                  </div>{" "}
                 </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/PHP-logo.svg"
+                    alt="PHP"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>PHP</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Langage de programation
+                    </h2>
+                  </div>{" "}
+                </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/Python-logo-notext.svg.png"
+                    alt="Python"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Python</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Langage de programation
+                    </h2>
+                  </div>{" "}
+                </div>
+
                 <div className={styles.logoItem}>
                   <Image
                     src="/MainPage/logo/docker.png"
                     alt="Docker"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
-                </div>
-                <div className={styles.logoItem}>
-                  <Image
-                    src="/MainPage/logo/WordPress-logotype-wmark.png"
-                    alt="WordPress"
-                    width={50}
-                    height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
-                  />
-                </div>
-              </div>
-              <h2 className={styles.aproposCompetencesTitle}>Logiciels:</h2>
-              <div className={styles.competencesLogos}>
-                <div className={styles.logoItem}>
-                  <Image
-                    src="/MainPage/logo/Visual_Studio_Code_1.35_icon.svg.png"
-                    alt="VS Code"
-                    width={50}
-                    height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
-                  />
-                </div>
-                <div className={styles.logoItem}>
-                  <Image
-                    src="/MainPage/logo/DBeaver_logo.svg"
-                    alt="DBeaver"
-                    width={50}
-                    height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
-                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Docker</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Conteneurisation
+                    </h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -238,11 +223,66 @@ export default function MainPage() {
                     alt="VirtualBox"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>VirtualBox</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Virtualisation
+                    </h2>
+                  </div>{" "}
+                </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/Visual_Studio_Code_1.35_icon.svg.png"
+                    alt="VS Code"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>VS Code</h2>
+                    <h2 className={styles.logoItemDescription}>IDE</h2>
+                  </div>{" "}
+                </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/DBeaver_logo.svg"
+                    alt="DBeaver"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>DBeaver</h2>
+                    <h2 className={styles.logoItemDescription}>IDE BDD</h2>
+                  </div>{" "}
+                </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/git.svg"
+                    alt="WordPress"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>GitHub</h2>
+                    <h2 className={styles.logoItemDescription}>Juste GitHub</h2>
+                  </div>{" "}
+                </div>
+                <div className={styles.logoItem}>
+                  <Image
+                    src="/MainPage/logo/fig.png"
+                    alt="Kubuntu"
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Figma</h2>
+                    <h2 className={styles.logoItemDescription}>Design UI/UX</h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -250,11 +290,14 @@ export default function MainPage() {
                     alt="Kubuntu"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Kubuntu</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Système d'exploitation
+                    </h2>
+                  </div>{" "}
                 </div>
                 <div className={styles.logoItem}>
                   <Image
@@ -262,17 +305,23 @@ export default function MainPage() {
                     alt="Windows"
                     width={50}
                     height={50}
-                    style={{
-                      objectFit: "contain",
-                      borderRadius: "8px",
-                    }}
+                    className={styles.logoItemImage}
                   />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>Windows</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      Système d'exploitation
+                    </h2>
+                  </div>{" "}
                 </div>
               </div>
             </div>{" "}
             <div className={styles.separatorLine}></div>
             <div className={styles.aproposHobbies}>
               <div className={styles.aproposHobbiesImage}>
+                <p className={styles.aproposHobbiesDescription}>
+                  L'histoire, en particulier moderne et contemporaine{" "}
+                </p>
                 <Image
                   src="/MainPage/berlin.jpg"
                   alt="Berlin"
@@ -281,6 +330,11 @@ export default function MainPage() {
                 />
               </div>
               <div className={styles.aproposHobbiesImage}>
+                <p className={styles.aproposHobbiesDescription}>
+                  2007, mon premier match au Stade Vélodrome face à Sochaux,
+                  victoire 4/2. Une passion intacte et toujours plus forte
+                  d'année en année.{" "}
+                </p>
                 <Image
                   src="/MainPage/roley.webp"
                   alt="Roley"
@@ -289,6 +343,10 @@ export default function MainPage() {
                 />
               </div>
               <div className={styles.aproposHobbiesImage}>
+                <p className={styles.aproposHobbiesDescription}>
+                  L'art sous toutes ses formes, une source d'inspiration
+                  inépuisable.{" "}
+                </p>
                 <Image
                   src="/MainPage/basquiat.jpg"
                   alt="Basquiat"
