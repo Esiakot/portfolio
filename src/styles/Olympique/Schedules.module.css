@@ -16,7 +16,7 @@
   width: 100%;
   backdrop-filter: blur(10px);
   background-color: #ffffff20;
-  margin: 0.25rem 0;
+  margin-bottom: 0.25rem;
   border: 1px solid #003049;
   height: 5vh;
 }

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Schedules from "./Schedules";
 import LastGame from "./LastGame";
+import HeadToHead from "./HeadToHead";
 import Standings from "./Standings";
 import TopPlayers from "./TopPlayers";
 
@@ -17,7 +18,10 @@ export default function Stats() {
         priority
       />
       <div className={styles.overlay} />
-      <LastGame />
+      <div className={styles.leftContainer}>
+        <LastGame />
+        <HeadToHead />
+      </div>
       <Standings />
       <div className={styles.rightContainer}>
         <Schedules />

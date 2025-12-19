@@ -157,7 +157,6 @@ export default function Schedules() {
                   className={styles.teamLogo}
                 />
               )}
-              <span className={styles.teamName}>{homeTeam?.name}</span>
             </div>
             <div className={styles.matchDate}>
               {formatDate(match.starting_at)}
@@ -173,7 +172,6 @@ export default function Schedules() {
                   className={styles.teamLogo}
                 />
               )}
-              <span className={styles.teamName}>{awayTeam?.name}</span>
             </div>
           </div>
         );
