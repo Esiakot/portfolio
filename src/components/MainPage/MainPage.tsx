@@ -3,6 +3,7 @@
 import styles from "@/styles/MainPage/MainPage.module.css";
 import Apropos from "./Apropos";
 import MesProjets from "./MesProjets";
+import Contact from "./Contact";
 import { Genos } from "next/font/google";
 import Image from "next/image";
 import React, { useRef } from "react";
@@ -15,11 +16,13 @@ const genos = Genos({
 export default function MainPage() {
   const aproposRef = useRef<HTMLDivElement>(null);
   const projetsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       const yOffset = -window.innerHeight * 0.12; // 12vh offset
-      const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
+      const y =
+        ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -81,7 +84,13 @@ export default function MainPage() {
           </div>
         </div>
         <div className={`${styles.container} ${styles.rightContainer}`}>
-          <span className={styles.title}>Contact</span>
+          <span
+            className={styles.title}
+            style={{ cursor: "pointer" }}
+            onClick={() => scrollToSection(contactRef)}
+          >
+            Contact
+          </span>
           <div className={styles.section}>
             <Image
               src="/MainPage/world.jpg"
@@ -98,6 +107,9 @@ export default function MainPage() {
       </div>
       <div ref={projetsRef} className={styles.sectionAnchor}>
         <MesProjets />
+      </div>
+      <div ref={contactRef} className={styles.sectionAnchor}>
+        <Contact />
       </div>
     </div>
   );
