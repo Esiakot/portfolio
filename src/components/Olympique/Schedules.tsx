@@ -1,14 +1,8 @@
 "use client";
 
 import styles from "@/styles/Olympique/Schedules.module.css";
-import { Genos } from "next/font/google";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
-const genos = Genos({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-});
 
 interface Participant {
   id: number;
@@ -88,19 +82,11 @@ export default function Schedules() {
   }, []);
 
   if (loading) {
-    return (
-      <div className={`${styles.loading} ${genos.className}`}>
-        Chargement...
-      </div>
-    );
+    return <div className={styles.loading}>Chargement...</div>;
   }
 
   if (error) {
-    return (
-      <div className={`${styles.error} ${genos.className}`}>
-        Erreur: {error}
-      </div>
-    );
+    return <div className={styles.error}>Erreur: {error}</div>;
   }
 
   const allMatches: Fixture[] = [];
@@ -136,7 +122,7 @@ export default function Schedules() {
   };
 
   return (
-    <div className={`${styles.schedules} ${genos.className}`}>
+    <div className={styles.schedules}>
       {upcomingMatches.map((match) => {
         const homeTeam = match.participants.find(
           (p) => p.meta.location === "home"

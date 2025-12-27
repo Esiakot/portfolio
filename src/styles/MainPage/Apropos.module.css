@@ -1,0 +1,171 @@
+/* Copied from MainPage.module.css, apropos section */
+.apropos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 88vh;
+  background-color: #004aad;
+  font-size: 1.5rem;
+}
+.aproposContent {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: skewX(-15deg);
+  background: #e6f1ff;
+  padding: 2vh 2vw;
+}
+.aproposHeadContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+}
+.aproposTitle {
+  height: 8vh;
+  width: 34.5%;
+  text-align: center;
+  line-height: 8vh;
+  color: #e6f1ff;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #004aad;
+  text-shadow: 2px 2px 4px #000000;
+  box-shadow: 2px 2px 4px #000000;
+}
+.aproposDescription {
+  width: 64.5%;
+  height: auto;
+  padding: 0.5vh 1vw;
+  color: #e6f1ff;
+  text-align: justify;
+  font-size: 1.32rem;
+  line-height: 1.32rem;
+  font-weight: 600;
+  background-color: #004aad;
+  text-shadow: 2px 2px 4px #000000;
+  box-shadow: 2px 2px 4px #000000;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.aproposDetails {
+  height: 74vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.separatorLine {
+  height: 1vh;
+  width: 100%;
+  background-color: #004aad;
+  box-shadow: 2px 2px 4px #000000;
+  margin-bottom: 2vh;
+}
+.aproposCompetences {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #004aad;
+  box-shadow: 2px 2px 4px #000000;
+  padding: 1vh 2vw;
+  margin-bottom: 2vh;
+}
+.aproposCompetencesTitle {
+  color: #e6f1ff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1vh;
+  text-shadow: 2px 2px 4px #000000;
+}
+.competencesLogos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh 0;
+}
+.logoItem {
+  width: 13.5vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2vh 1vw;
+  background-color: #00071090;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 2px 2px 4px #000000;
+  transition: all 0.3s ease-in-out;
+}
+.logoItem:hover {
+  background-color: #2e425cc0;
+}
+.logoItemImage {
+  height: 5vh;
+  width: 3vw;
+  object-fit: contain;
+}
+.logoItemText {
+  height: 4vh;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logoItemTitle {
+  color: #e6f1ff;
+  font-size: 1.3rem;
+}
+.logoItemDescription {
+  color: #e6f1ff;
+  font-size: 0.8rem;
+}
+.aproposHobbies {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #004aad;
+  box-shadow: 2px 2px 4px #000000;
+  height: 16vh;
+}
+.aproposHobbiesImage {
+  position: relative;
+  width: 33%;
+  height: 90%;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aproposHobbiesDescription {
+  width: 100%;
+  height: 100%;
+  color: #e6f1ff;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 1vh 1vw;
+  text-align: justify;
+  opacity: 0;
+  z-index: 2;
+  backdrop-filter: blur(1px) brightness(0.3);
+  transition: all 0.3s ease-in-out;
+}
+.aproposHobbiesImage:hover .aproposHobbiesDescription {
+  opacity: 1;
+}
