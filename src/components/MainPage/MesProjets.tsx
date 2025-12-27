@@ -74,8 +74,7 @@ export default function MesProjets() {
   };
 
   return (
-    <div className={styles.mesProjets} style={{ height: "88vh" }}>
-      <h2>Mes Projets</h2>
+    <div className={styles.mesProjets}>
       <div className={styles.choix}>
         {choixList.map((c) => (
           <button
