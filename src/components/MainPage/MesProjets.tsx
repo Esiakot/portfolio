@@ -75,45 +75,47 @@ export default function MesProjets() {
 
   return (
     <div className={styles.mesProjets}>
-      <div className={styles.choix}>
-        {choixList.map((c) => (
-          <button
-            key={c}
-            className={`${styles.choixButton} ${
-              choix === c ? styles.active : ""
-            }`}
-            onClick={() => handleChoix(c)}
-          >
-            {c}
-          </button>
-        ))}
-      </div>
-      <div className={styles.carousel}>
-        <a
-          href={projets[carouselIndex].lien || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.carouselContent}
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            cursor: "pointer",
-          }}
-        >
-          <h3>{projets[carouselIndex].titre}</h3>
-          <p>{projets[carouselIndex].description}</p>
-        </a>
-        <div className={styles.carouselNav}>
-          {projets.map((_: Projet, idx: number) => (
+      <div className={styles.mesProjetsContent}>
+        <div className={styles.choix}>
+          {choixList.map((c) => (
             <button
-              key={idx}
-              className={`${styles.carouselNavButton} ${
-                carouselIndex === idx ? styles.active : ""
+              key={c}
+              className={`${styles.choixButton} ${
+                choix === c ? styles.active : ""
               }`}
-              onClick={() => handleNav(idx)}
-              aria-label={`Voir projet ${idx + 1}`}
-            />
+              onClick={() => handleChoix(c)}
+            >
+              {c}
+            </button>
           ))}
+        </div>
+        <div className={styles.carousel}>
+          <a
+            href={projets[carouselIndex].lien || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.carouselContent}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              cursor: "pointer",
+            }}
+          >
+            <h3>{projets[carouselIndex].titre}</h3>
+            <p>{projets[carouselIndex].description}</p>
+          </a>
+          <div className={styles.carouselNav}>
+            {projets.map((_: Projet, idx: number) => (
+              <button
+                key={idx}
+                className={`${styles.carouselNavButton} ${
+                  carouselIndex === idx ? styles.active : ""
+                }`}
+                onClick={() => handleNav(idx)}
+                aria-label={`Voir projet ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
