@@ -1,8 +1,125 @@
 import styles from "@/styles/MainPage/Apropos.module.css";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+
+interface Competence {
+  id: string;
+  title: string;
+  description: string;
+  logo: string;
+  details: string;
+}
+
+const competences: Competence[] = [
+  {
+    id: "javascript",
+    title: "Javascript",
+    description: "Langage de programation",
+    logo: "/MainPage/logo/Javascript-736400_960_720.png",
+    details:
+      "Utilisation de JavaScript pour le développement front-end et back-end. Création d'interactions dynamiques sur les pages web et développement d'applications avec Node.js.",
+  },
+  {
+    id: "typescript",
+    title: "TypeScript",
+    description: "Langage de programation",
+    logo: "/MainPage/logo/Typescript.svg.png",
+    details:
+      "Adoption de TypeScript pour un typage statique fort, améliorant la maintenabilité du code et réduisant les erreurs. Utilisé dans mes projets Next.js et Node.js.",
+  },
+  {
+    id: "nextjs",
+    title: "Next.js",
+    description: "Framework",
+    logo: "/MainPage/logo/next-js.svg",
+    details:
+      "Développement de ce portfolio avec Next.js. Maîtrise du routing, du SSR, des API routes et de l'optimisation des performances.",
+  },
+  {
+    id: "mariadb",
+    title: "MariaDB",
+    description: "Base de données",
+    logo: "/MainPage/logo/Mariadb.png",
+    details:
+      "Conception et gestion de bases de données relationnelles. Écriture de requêtes SQL complexes et optimisation des performances pour les projets ETL chez SYMETRIE.",
+  },
+  {
+    id: "php",
+    title: "PHP",
+    description: "Langage de programation",
+    logo: "/MainPage/logo/PHP-logo.svg",
+    details:
+      "Développement back-end avec PHP, création d'APIs REST et intégration avec des bases de données MySQL/MariaDB.",
+  },
+  {
+    id: "python",
+    title: "Python",
+    description: "Langage de programation",
+    logo: "/MainPage/logo/Python-logo-notext.svg.png",
+    details:
+      "Développement d'ETLs et de scripts d'automatisation chez SYMETRIE. Manipulation de données avec pandas et création de scripts de traitement batch.",
+  },
+  {
+    id: "docker",
+    title: "Docker",
+    description: "Conteneurisation",
+    logo: "/MainPage/logo/docker.png",
+    details:
+      "Conteneurisation d'applications pour faciliter le déploiement et assurer la cohérence entre les environnements de développement et de production.",
+  },
+  {
+    id: "virtualbox",
+    title: "VirtualBox",
+    description: "Virtualisation",
+    logo: "/MainPage/logo/VirtualBox_2024_Logo.svg.png",
+    details:
+      "Création et gestion de machines virtuelles pour tester différents environnements et systèmes d'exploitation dans un cadre sécurisé.",
+  },
+  {
+    id: "vscode",
+    title: "VS Code",
+    description: "IDE",
+    logo: "/MainPage/logo/Visual_Studio_Code_1.35_icon.svg.png",
+    details:
+      "Mon IDE principal pour le développement. Maîtrise des extensions, du débogage et des raccourcis pour une productivité optimale.",
+  },
+  {
+    id: "dbeaver",
+    title: "DBeaver",
+    description: "IDE BDD",
+    logo: "/MainPage/logo/DBeaver_logo.svg",
+    details:
+      "Utilisation de DBeaver pour la gestion et l'exploration des bases de données, la visualisation des schémas et l'exécution de requêtes SQL.",
+  },
+  {
+    id: "github",
+    title: "GitHub",
+    description: "Juste GitHub",
+    logo: "/MainPage/logo/git.svg",
+    details:
+      "Gestion de versions avec Git et GitHub. Collaboration en équipe, gestion des branches, pull requests et intégration continue.",
+  },
+  {
+    id: "figma",
+    title: "Figma",
+    description: "Design UI/UX",
+    logo: "/MainPage/logo/fig.png",
+    details:
+      "Conception d'interfaces utilisateur et de maquettes. Prototypage interactif et collaboration avec les équipes de développement.",
+  },
+];
 
 export default function Apropos() {
+  const [selectedCompetence, setSelectedCompetence] = useState<string | null>(
+    null
+  );
+
+  const handleCompetenceClick = (id: string) => {
+    setSelectedCompetence(selectedCompetence === id ? null : id);
+  };
+
+  const selectedDetails = competences.find((c) => c.id === selectedCompetence);
+
   return (
     <div className={styles.apropos}>
       <div className={styles.aproposContent}>
@@ -19,232 +136,54 @@ export default function Apropos() {
           <div className={styles.separatorLine}></div>
           <div className={styles.aproposCompetences}>
             <div className={styles.competencesLogos}>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/HTMLLogo.png"
-                  alt="HTML5"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>HTML</h2>
-                  <h2 className={styles.logoItemDescription}>Mise en forme</h2>
+              {competences.map((comp) => (
+                <div
+                  key={comp.id}
+                  className={`${styles.logoItem} ${
+                    selectedCompetence === comp.id ? styles.logoItemActive : ""
+                  }`}
+                  onClick={() => handleCompetenceClick(comp.id)}
+                >
+                  <Image
+                    src={comp.logo}
+                    alt={comp.title}
+                    width={50}
+                    height={50}
+                    className={styles.logoItemImage}
+                  />
+                  <div className={styles.logoItemText}>
+                    <h2 className={styles.logoItemTitle}>{comp.title}</h2>
+                    <h2 className={styles.logoItemDescription}>
+                      {comp.description}
+                    </h2>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Official_CSS_Logo.svg"
-                  alt="CSS"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>CSS</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Feuille de style
-                  </h2>
+              ))}
+            </div>
+            <div className={styles.aproposDetailsParcours}>
+              {selectedDetails ? (
+                <div className={styles.detailsContent}>
+                  <div className={styles.detailsHeader}>
+                    <Image
+                      src={selectedDetails.logo}
+                      alt={selectedDetails.title}
+                      width={60}
+                      height={60}
+                      className={styles.detailsLogo}
+                    />
+                    <h3 className={styles.detailsTitle}>
+                      {selectedDetails.title}
+                    </h3>
+                  </div>
+                  <p className={styles.detailsText}>
+                    {selectedDetails.details}
+                  </p>
                 </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Javascript-736400_960_720.png"
-                  alt="JavaScript"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Javascript</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Langage de programation
-                  </h2>
+              ) : (
+                <div className={styles.detailsPlaceholder}>
+                  <p>Cliquez sur une compétence pour voir les détails</p>
                 </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Typescript.svg.png"
-                  alt="TypeScript"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>TypeScript</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Langage de programation
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/next-js.svg"
-                  alt="Next.js"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Next.js</h2>
-                  <h2 className={styles.logoItemDescription}>Framework</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Mariadb.png"
-                  alt="MariaDB"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>MariaDB</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Base de données
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/PHP-logo.svg"
-                  alt="PHP"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>PHP</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Langage de programation
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Python-logo-notext.svg.png"
-                  alt="Python"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Python</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Langage de programation
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/docker.png"
-                  alt="Docker"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Docker</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Conteneurisation
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/VirtualBox_2024_Logo.svg.png"
-                  alt="VirtualBox"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>VirtualBox</h2>
-                  <h2 className={styles.logoItemDescription}>Virtualisation</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Visual_Studio_Code_1.35_icon.svg.png"
-                  alt="VS Code"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>VS Code</h2>
-                  <h2 className={styles.logoItemDescription}>IDE</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/DBeaver_logo.svg"
-                  alt="DBeaver"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>DBeaver</h2>
-                  <h2 className={styles.logoItemDescription}>IDE BDD</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/git.svg"
-                  alt="WordPress"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>GitHub</h2>
-                  <h2 className={styles.logoItemDescription}>Juste GitHub</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/fig.png"
-                  alt="Kubuntu"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Figma</h2>
-                  <h2 className={styles.logoItemDescription}>Design UI/UX</h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Kubuntu_logo.svg.png"
-                  alt="Kubuntu"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Kubuntu</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Système d'exploitation
-                  </h2>
-                </div>
-              </div>
-              <div className={styles.logoItem}>
-                <Image
-                  src="/MainPage/logo/Windows_logo_-_2021.svg.png"
-                  alt="Windows"
-                  width={50}
-                  height={50}
-                  className={styles.logoItemImage}
-                />
-                <div className={styles.logoItemText}>
-                  <h2 className={styles.logoItemTitle}>Windows</h2>
-                  <h2 className={styles.logoItemDescription}>
-                    Système d'exploitation
-                  </h2>
-                </div>
-              </div>
+              )}
             </div>
           </div>
           <div className={styles.separatorLine}></div>
